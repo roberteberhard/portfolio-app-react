@@ -7,7 +7,7 @@ const StyledCard = styled.div`
   .card {
     position: relative;
     width: 280px;
-    height: 420px;
+    height: 430px;
     padding: 5px 30px 0 30px;
     border-radius: 10px;
     background-color: var(--white);
@@ -52,14 +52,14 @@ const StyledCard = styled.div`
       justify-content: space-between;
       align-items: center;
       button {
-        padding: 5px 15px;
+        padding: 6px 15px;
         border: none;
         color: var(--white);
         font-size: var(--fz-xs);
         border-radius: 30px;
         background-color: var(--body);
         &.active {
-          background-color: var(--primary);
+          background-color: var(--secondary);
         }
       }
     }
@@ -69,7 +69,7 @@ const StyledCard = styled.div`
       button {
         width: 160px;
         margin: 0 30px;
-        padding: 12px 0;
+        padding: 14px 0;
         border: none;
         color: var(--white);
         font-family: var(--font-mono);
@@ -77,7 +77,7 @@ const StyledCard = styled.div`
         border-radius: 30px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
         background-color: var(--secondary);
-        background-color: #3b82b9;
+        background-color: var(--primary);
       }
     }
   }
@@ -105,7 +105,7 @@ const SneakerCard = () => {
     }
 
     const handleMouseLeavePosition = e => {
-      cardCurrent.style.transition = 'all 300ms ease'
+      cardCurrent.style.transition = 'all 500ms ease'
       cardCurrent.style.transform = 'rotateX(0deg) rotateY(0deg)'
     }
 

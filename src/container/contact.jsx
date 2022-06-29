@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 // styled
-const StyledSkillsSection = styled.section`
+const StyledWorkSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
   min-height: 50vh;
-  background-color: var(--sandy);
+  background-color: var(--body);
 `
-const StyledSkillsContent = styled.div`
+const StyledWorkContent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,12 +25,12 @@ const StyledSkillsContent = styled.div`
 `
 
 // markup
-const Skills = () => {
+const Contact = () => {
   return (
-    <StyledSkillsSection id="skills">
-      <StyledSkillsContent>Skills</StyledSkillsContent>
-    </StyledSkillsSection>
+    <StyledWorkSection id="contact">
+      <StyledWorkContent>Contact</StyledWorkContent>
+    </StyledWorkSection>
   )
 }
 
-export default Skills
+export default Contact

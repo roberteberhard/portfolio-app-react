@@ -7,8 +7,7 @@ const StyledWorkSection = styled.section`
   flex-direction: column;
   align-items: flex-start;
   min-height: 50vh;
-
-  background: linear-gradient(to bottom, var(--sandy), var(--body));
+  background-color: var(--sandy);
 `
 const StyledWorkContent = styled.div`
   display: flex;

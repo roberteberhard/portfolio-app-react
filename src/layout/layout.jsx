@@ -48,10 +48,8 @@ const Layout = ({ children }) => {
       </a>
       <StyledContent>
         <Navbar />
-        <div id="content">
-          {children}
-          <Footer />
-        </div>
+        <div id="content">{children}</div>
+        <Footer />
       </StyledContent>
     </ThemeProvider>
   )

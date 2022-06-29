@@ -11,6 +11,7 @@ const StyledHeroSection = styled.section`
   align-items: flex-start;
   min-height: 100vh;
   padding: 0px 50px;
+  
   @media (max-width: 1080px) {
     padding: 0 40px;
   }
@@ -23,20 +24,6 @@ const StyledHeroContent = styled.div`
   flex-direction: row;
   align-items: center;
   width: 100%;
-
-  /* position: relative;
-  padding-bottom: 1.75rem;
-
-  :after {
-    background: repeating-linear-gradient(to right, var(--secondary), var(--secondary) 4px, transparent 4px, transparent 8px);
-    bottom: 0;
-    content: '';
-    height: 0.0625rem;
-    left: 0;
-    position: absolute;
-    width: 100%;
-  } */
-
   @media (max-width: 1080px) {
     flex-direction: column;
   }
@@ -47,39 +34,32 @@ const StyledHeroLeft = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: calc(100% - 420px);
-
   @media (max-width: 1080px) {
     width: 100%;
   }
-
   h1 {
     margin: 0 0 25px;
     color: var(--secondary);
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-lg));
     font-weight: 500;
-
     @media (max-width: 480px) {
       margin: 0 0 20px 2px;
     }
   }
-
   h3 {
     color: var(--primary);
     line-height: 0.9;
     margin-bottom: 30px;
   }
-
   p {
     max-width: 560px;
     margin-bottom: 35px !important;
   }
-
   .button-box {
     .button-link {
       ${({ theme }) => theme.mixins.bigButton};
     }
-
     @media (max-width: 768px) {
       text-align: center;
     }
@@ -98,29 +78,29 @@ const StyledHeroRight = styled.div`
     justify-content: center;
     align-items: center;
   }
-  .grid-icon-1 {
+  .card-plus-1 {
     position: absolute;
     z-index: 3;
     width: 28px;
     height: 28px;
-    top: 50px;
-    left: -10px;
+    top: 170px;
+    left: -20px;
   }
-  .grid-icon-2 {
+  .card-plus-2 {
     position: absolute;
     z-index: 3;
     width: 28px;
     height: 28px;
-    top: 10px;
-    right: -20px;
+    top: 80px;
+    right: 5px;
   }
-  .grid-icon-3 {
+  .card-plus-3 {
     position: absolute;
     z-index: 3;
     width: 28px;
     height: 28px;
-    bottom: 60px;
-    right: 10px;
+    bottom: -30px;
+    right: 110px;
   }
 
   @media (max-width: 1080px) {
@@ -143,7 +123,6 @@ const Hero = () => {
       </a>
     </div>
   )
-
   const items = [one, two, three, four, five]
 
   useEffect(() => {
@@ -173,13 +152,13 @@ const Hero = () => {
               <motion.div animate={{ scale: [1.1, 1], opacity: [0, 1] }} transition={{ delay: 1.6, duration: 0.3 }} className="fade-enter">
                 <SneakerCard />
               </motion.div>
-              <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 1.8, duration: 0.3 }} className="grid-icon-1 fade-enter">
+              <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 1.8, duration: 0.3 }} className="card-plus-1 fade-enter">
                 <IconPlus />
               </motion.div>
-              <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 1.9, duration: 0.3 }} className="grid-icon-2 fade-enter">
+              <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 1.9, duration: 0.3 }} className="card-plus-2 fade-enter">
                 <IconPlus />
               </motion.div>
-              <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 2, duration: 0.3 }} className="grid-icon-3 fade-enter">
+              <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 2, duration: 0.3 }} className="card-plus-3 fade-enter">
                 <IconPlus />
               </motion.div>
             </div>

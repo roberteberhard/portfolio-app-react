@@ -7,8 +7,7 @@ const StyledTestimonialsSection = styled.section`
   flex-direction: column;
   align-items: flex-start;
   min-height: 50vh;
-
-  background: linear-gradient(to bottom, var(--body), var(--pink));
+  background-color: var(--sandy);
 `
 const StyledTestimonialsContent = styled.div`
   display: flex;
