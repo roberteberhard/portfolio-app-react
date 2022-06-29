@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { images } from '../constants'
 import { IconPlus } from '../assets/icons'
+import { SneakerCard } from '../components'
 
 // styled
 const StyledHeroSection = styled.section`
@@ -90,22 +90,14 @@ const StyledHeroRight = styled.div`
   flex-direction: column;
   align-items: center;
   width: 420px;
-
-  .hero-grid {
+  position: relative;
+  .hero-card {
     display: flex;
-    width: 480px;
-    max-width: 480px;
+    width: 420px;
     height: 480px;
     justify-content: center;
     align-items: center;
-    position: relative;
   }
-
-  .grid-block-1 {
-    position: relative;
-    width: 220px;
-  }
-
   .grid-icon-1 {
     position: absolute;
     z-index: 3;
@@ -114,7 +106,6 @@ const StyledHeroRight = styled.div`
     top: 50px;
     left: -10px;
   }
-
   .grid-icon-2 {
     position: absolute;
     z-index: 3;
@@ -123,7 +114,6 @@ const StyledHeroRight = styled.div`
     top: 10px;
     right: -20px;
   }
-
   .grid-icon-3 {
     position: absolute;
     z-index: 3;
@@ -148,9 +138,9 @@ const Hero = () => {
   const four = <p>I am a freelance web developer with more than 2 decades of experience in developing solid and scalable front-end products using modern web technologies for clients across several countries.</p>
   const five = (
     <div className="button-box">
-      <div className="button-link" to="/#contact">
+      <a href="/#contact" className="button-link">
         Let's talk
-      </div>
+      </a>
     </div>
   )
 
@@ -179,9 +169,9 @@ const Hero = () => {
         </StyledHeroLeft>
         <StyledHeroRight>
           {isMounted && (
-            <div className="hero-grid">
-              <motion.div animate={{ scale: [1.1, 1], opacity: [0, 1] }} transition={{ delay: 1.6, duration: 0.3 }} className="grid-block-1 fade-enter">
-                <img src={images.things} width="400" alt="Build things showcase" />
+            <div className="hero-card">
+              <motion.div animate={{ scale: [1.1, 1], opacity: [0, 1] }} transition={{ delay: 1.6, duration: 0.3 }} className="fade-enter">
+                <SneakerCard />
               </motion.div>
               <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 1.8, duration: 0.3 }} className="grid-icon-1 fade-enter">
                 <IconPlus />

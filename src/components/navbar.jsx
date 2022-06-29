@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Menu } from '../components'
 import { useScrollDirection } from '../hooks/'
@@ -165,9 +166,9 @@ const Navbar = () => {
     <>
       {scrolledToTop ? (
         <div className="logo logo--large" tabIndex="-1">
-          <a href="/" aria-label="Home">
+          <Link to="/" aria-label="Home">
             <IconLogo />
-          </a>
+          </Link>
         </div>
       ) : (
         <div className="logo logo--small" tabIndex="-1">
