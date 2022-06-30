@@ -4,6 +4,7 @@ import { IconSeparatorUp } from '../assets/icons'
 
 // styles
 const StyledAboutSection = styled.section`
+  display: grid;
   background-color: var(--sandy);
   .separator {
     fill: var(--body);

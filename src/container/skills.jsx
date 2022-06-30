@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 // styled
 const StyledSkillsSection = styled.section`
+  display: grid;
   background-color: var(--sandy);
 `
 

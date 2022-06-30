@@ -4,6 +4,7 @@ import { IconSeparatorDown } from '../assets/icons'
 
 // styled
 const StyledContactSection = styled.section`
+  display: grid;
   background-color: var(--body);
   .separator {
     fill: var(--sandy);
