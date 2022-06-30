@@ -16,6 +16,16 @@ import PoppinsSemiboldWoff2 from '../fonts/poppins/poppins-600.woff2'
 import PoppinsBoldWoff from '../fonts/poppins/poppins-700.woff'
 import PoppinsBoldWoff2 from '../fonts/poppins/poppins-700.woff2'
 
+import SFMonoRegularWoff from '../fonts/SFMono/SFMono-Regular.woff'
+import SFMonoRegularWoff2 from '../fonts/SFMono/SFMono-Regular.woff2'
+import SFMonoSemiboldWoff from '../fonts/SFMono/SFMono-Semibold.woff'
+import SFMonoSemiboldWoff2 from '../fonts/SFMono/SFMono-Semibold.woff2'
+
+import SFMonoRegularItalicWoff from '../fonts/SFMono/SFMono-RegularItalic.woff'
+import SFMonoRegularItalicWoff2 from '../fonts/SFMono/SFMono-RegularItalic.woff2'
+import SFMonoSemiboldItalicWoff from '../fonts/SFMono/SFMono-SemiboldItalic.woff'
+import SFMonoSemiboldItalicWoff2 from '../fonts/SFMono/SFMono-SemiboldItalic.woff2'
+
 const ibmPlexMonoNormalWeights = {
   400: [IbmPlexMonoRegularWoff, IbmPlexMonoRegularWoff2],
   500: [IbmPlexMonoMediumWoff, IbmPlexMonoMediumWoff2],
@@ -28,6 +38,16 @@ const poppinsNormalWeights = {
   700: [PoppinsBoldWoff, PoppinsBoldWoff2]
 }
 
+const sfMonoNormalWeights = {
+  400: [SFMonoRegularWoff, SFMonoRegularWoff2],
+  600: [SFMonoSemiboldWoff, SFMonoSemiboldWoff2]
+}
+
+const sfMonoItalicWeights = {
+  400: [SFMonoRegularItalicWoff, SFMonoRegularItalicWoff2],
+  600: [SFMonoSemiboldItalicWoff, SFMonoSemiboldItalicWoff2]
+}
+
 const ibmPlexMono = {
   name: 'IBMPlexMono',
   normal: ibmPlexMonoNormalWeights
@@ -36,6 +56,12 @@ const ibmPlexMono = {
 const poppins = {
   name: 'Poppins',
   normal: poppinsNormalWeights
+}
+
+const sfMono = {
+  name: 'SF Mono',
+  normal: sfMonoNormalWeights,
+  italic: sfMonoItalicWeights
 }
 
 const createFontFaces = (family, style = 'normal') => {
@@ -59,9 +85,11 @@ const createFontFaces = (family, style = 'normal') => {
 
 const ibmPlexMonoNormal = createFontFaces(ibmPlexMono)
 const poppinsNormal = createFontFaces(poppins)
+const sfMonoNormal = createFontFaces(sfMono)
+const sfMonoItalic = createFontFaces(sfMono, 'italic')
 
 const Fonts = css`
-  ${(ibmPlexMonoNormal, poppinsNormal)}
+  ${ibmPlexMonoNormal + poppinsNormal + sfMonoNormal + sfMonoItalic}
 `
 
 export default Fonts

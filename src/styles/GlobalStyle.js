@@ -361,7 +361,6 @@ const GlobalStyle = createGlobalStyle`
     pointer-events: none;
     width: 100%;
     height: 100px;
-    fill: var(--body);
   }
   .separator--up {
     top: -1px;

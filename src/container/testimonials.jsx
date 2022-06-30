@@ -3,32 +3,33 @@ import styled from 'styled-components'
 
 // styled
 const StyledTestimonialsSection = styled.section`
-  ${({ theme }) => theme.mixins.flexCenter};
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 50vh;
   background-color: var(--sandy);
 `
+
 const StyledTestimonialsContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-
+  padding: 0 var(--pad-lg) var(--pad-xxl) var(--pad-lg);
+  border: 1px dotted salmon;
   @media (max-width: 1080px) {
-    flex-direction: column;
+    padding: 0 var(--pad-md) var(--pad-xl) var(--pad-md);
   }
-
   @media (max-width: 768px) {
-    flex-direction: column;
+    padding: 0 var(--pad-sm) var(--pad-lg) var(--pad-sm);
   }
+`
+
+const StyledInnerSection = styled.div`
+  margin: 0;
 `
 
 // markup
 const Testimonials = () => {
   return (
     <StyledTestimonialsSection id="testimonials">
-      <StyledTestimonialsContent>Testimonials</StyledTestimonialsContent>
+      <StyledTestimonialsContent>
+        <StyledInnerSection>
+          <h2 className="numbered-heading">Testimonials</h2>
+        </StyledInnerSection>
+      </StyledTestimonialsContent>
     </StyledTestimonialsSection>
   )
 }

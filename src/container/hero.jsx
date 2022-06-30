@@ -10,15 +10,15 @@ const StyledHeroSection = styled.section`
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
-  padding: 0px 50px;
-  
+  padding: 0px var(--pad-lg);
   @media (max-width: 1080px) {
-    padding: 0 40px;
+    padding: 0px var(--pad-md);
   }
   @media (max-width: 768px) {
-    padding: 0 25px;
+    padding: 0px var(--pad-sm);
   }
 `
+
 const StyledHeroContent = styled.div`
   display: flex;
   flex-direction: row;

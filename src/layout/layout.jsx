@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 import { Navbar } from '../components'
 import { Footer } from '../container'
 import { GlobalStyle, theme } from '../styles'
@@ -12,10 +14,32 @@ const StyledContent = styled.div`
 `
 // markup
 const Layout = ({ children }) => {
+  // register plugin
+  gsap.registerPlugin(ScrollTrigger)
+
   useEffect(() => {
     // attributes
     const locationHash = window.location.hash
     const allLinks = Array.from(document.querySelectorAll('a'))
+    const allSeparators = [...document.querySelectorAll('path.path-anim')]
+
+    allSeparators.forEach(el => {
+      const svgEl = el.closest('svg')
+      const pathTo = el.dataset.pathTo
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: svgEl,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        })
+        .to(el, {
+          ease: 'none',
+          attr: { d: pathTo }
+        })
+    })
 
     // smooth scroll to # anker point
     if (locationHash) {

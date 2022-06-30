@@ -9,7 +9,6 @@ const variables = css`
     --black: #030303;
     --white: #ffffff;
     --sandy: #e3e0d9;
-    --pink: #f8e6ef;
     --primary: #3d4a5b;
     --primary-shadow: rgb(37, 47, 56, 0.25);
     --secondary: #ff7f50;
@@ -26,6 +25,12 @@ const variables = css`
     --fz-xl: 20px;
     --fz-xxl: 22px;
     --fz-heading: 32px;
+
+    --pad-xxl: 100px;
+    --pad-xl: 70px;
+    --pad-lg: 50px;
+    --pad-md: 40px;
+    --pad-sm: 25px;
 
     --border-radius: 4px;
     --nav-height: 100px;

@@ -12,7 +12,16 @@ const StyledFooter = styled.footer`
   min-height: 70px;
   padding: 15px;
   text-align: center;
-  background-color
+  background-colol: var(--body);
+`
+const StyledInnerSection = styled.div`
+  padding: 0px var(--pad-lg);
+  @media (max-width: 1080px) {
+    padding: 0px var(--pad-md);
+  }
+  @media (max-width: 768px) {
+    padding: 0px var(--pad-sm);
+  }
 `
 
 const StyledSocialLinks = styled.div`
@@ -82,30 +91,27 @@ const Footer = () => {
 
   return (
     <StyledFooter>
-      <StyledSocialLinks>
-        <ul>
-          {socialMedia &&
-            socialMedia.map(({ name, url }, i) => (
-              <li key={i}>
-                <a href={url} aria-label={name}>
-                  <Icon name={name} />
-                </a>
-              </li>
-            ))}
-        </ul>
-      </StyledSocialLinks>
-
-      <StyledCredit tabindex="-1">
-        <a href="https://github.com/roberteberhard" target="_blank" rel="noopener noreferrer">
-          <div>© {date} ROBERTEBERHARD</div>
-        </a>
-        <Link to="/privacy">
-          <div>Privacy </div>
-        </Link>
-        <Link to="/imprint">
-          <div>Imprint </div>
-        </Link>
-      </StyledCredit>
+      <StyledInnerSection>
+        <StyledSocialLinks>
+          <ul>
+            {socialMedia &&
+              socialMedia.map(({ name, url }, i) => (
+                <li key={i}>
+                  <a href={url} aria-label={name}>
+                    <Icon name={name} />
+                  </a>
+                </li>
+              ))}
+          </ul>
+        </StyledSocialLinks>
+        <StyledCredit tabindex="-1">
+          <a href="https://github.com/roberteberhard" target="_blank" rel="noopener noreferrer">
+            <div>© {date} ROBERTEBERHARD</div>
+          </a>
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/imprint">Imprint</Link>
+        </StyledCredit>
+      </StyledInnerSection>
     </StyledFooter>
   )
 }
