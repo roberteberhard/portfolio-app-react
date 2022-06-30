@@ -116,8 +116,8 @@ const StyledSidebar = styled.aside`
         width: 80px;
         margin-bottom: 5px;
         color: var(--secondary);
-        font-family: var(--font-sans);
-        font-size: var(--fz-sm);
+        font-family: var(--font-mono);
+        font-size: var(--fz-md);
         font-weight: 500;
         text-align: right;
         @media (max-width: 480px) {
@@ -130,9 +130,9 @@ const StyledSidebar = styled.aside`
       width: calc(100% - 80px);
       padding: 3px 20px 20px;
       color: var(--white);
-      font-family: var(--font-mono);
+      font-family: var(--font-sans);
       font-size: var(--fz-lg);
-      font-weight: 500;
+      font-weight: 400;
       @media (max-width: 480px) {
         width: calc(100% - 60px);
         padding: 3px 20px 20px 10px;

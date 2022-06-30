@@ -104,17 +104,15 @@ const StyledLinks = styled.div`
       align-items: center;
       counter-increment: item 1;
       color: var(--white);
-      font-family: var(--font-mono);
-      font-size: var(--fz-md);
-      font-weight: 500;
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 400;
       margin: 0 15px;
       &:before {
-        position: relative;
-        top: 1px;
         content: '0' counter(item) '.';
         padding-right: 8px;
         color: var(--secondary);
-        font-family: var(--font-sans);
+        font-family: var(--font-mono);
         font-size: var(--fz-sm);
         font-weight: 500;
       }

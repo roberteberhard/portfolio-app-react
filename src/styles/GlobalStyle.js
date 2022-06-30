@@ -94,7 +94,7 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     margin: 0 0 10px 0;
     color: var( --white);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1;
     overflow-wrap: break-word;
   }
@@ -253,17 +253,20 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: clamp(40px, 8vw, 60px);
   }
+
+
   .numbered-heading {
     display: flex;
     align-items: center;
     position: relative;
     margin: 10px 0 40px;
     width: 100%;
-    font-size: clamp(26px, 5vw, var(--fz-heading));
+    color: var(--white);
+    font-size: clamp(var(--fz-xxl), 3vw, 26px);
     white-space: nowrap;
     &:before {
       position: relative;
-      bottom: 4px;
+      bottom: -2px;
       counter-increment: section;
       content: '0' counter(section) '.';
       margin-right: 10px;
@@ -271,7 +274,6 @@ const GlobalStyle = createGlobalStyle`
       font-family: var(--font-mono);
       font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
       font-weight: 400;
-
       @media (max-width: 480px) {
         margin-bottom: -3px;
         margin-right: 5px;
@@ -281,11 +283,11 @@ const GlobalStyle = createGlobalStyle`
       content: '';
       display: block;
       position: relative;
-      top: -5px;
+      top: 5px;
       width: 300px;
       height: 1px;
       margin-left: 20px;
-      background-color: var(--primary);
+      background-color: var(--body);
 
       @media (max-width: 1080px) {
         width: 200px;

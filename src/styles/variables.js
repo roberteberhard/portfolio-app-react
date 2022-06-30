@@ -14,8 +14,8 @@ const variables = css`
     --secondary: #ff7f50;
     --secondary-tint: #3d4a5b;
     --ternary: #ff7f50;
-    --font-sans: 'Poppins', sans-serif;
-    --font-mono: 'IBMPlexMono', monospace;
+    --font-sans: 'Poppins', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 
     --fz-xxs: 12px;
     --fz-xs: 13px;
@@ -24,7 +24,7 @@ const variables = css`
     --fz-lg: 18px;
     --fz-xl: 20px;
     --fz-xxl: 22px;
-    --fz-heading: 32px;
+    --fz-heading: 28px;
 
     --pad-xxl: 100px;
     --pad-xl: 70px;

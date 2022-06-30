@@ -8,7 +8,6 @@ const StyledWorkSection = styled.section`
 
 const StyledWorkContent = styled.div`
   padding: 0 var(--pad-lg) var(--pad-xxl) var(--pad-lg);
-  border: 1px dotted salmon;
   @media (max-width: 1080px) {
     padding: 0 var(--pad-md) var(--pad-xl) var(--pad-md);
   }
