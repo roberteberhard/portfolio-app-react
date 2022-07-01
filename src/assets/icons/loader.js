@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import useShop from '../../AppContext'
 
 const svgVariants = {
   hidden: { opacity: 1, pathLength: 0, fill: 'rgba(255, 255, 255, 0)' },
@@ -7,6 +8,17 @@ const svgVariants = {
 }
 
 const IconLoader = () => {
+  const { appIsLoaded } = useShop()
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      appIsLoaded(true)
+    }, 2000)
+
+    return () => clearTimeout(timeout)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
       <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">

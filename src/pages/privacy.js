@@ -11,7 +11,7 @@ const StyledMainContainer = styled.main`
 const Privacy = () => {
   return (
     <Layout>
-      <StyledMainContainer>
+      <StyledMainContainer id="home">
         <h1>Privacy</h1>
       </StyledMainContainer>
     </Layout>

@@ -5,6 +5,10 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import { Loader, Navbar } from '../components'
 import { Footer } from '../container'
 import { GlobalStyle, theme } from '../styles'
+import useShop from '../AppContext'
+
+// register gsap
+gsap.registerPlugin(ScrollTrigger)
 
 // styled
 const StyledContent = styled.div`
@@ -12,18 +16,32 @@ const StyledContent = styled.div`
   flex-direction: column;
   min-height: 100vh;
 `
+
 // markup
 const Layout = ({ children }) => {
-  gsap.registerPlugin(ScrollTrigger)
-
-  const isMounted = true
+  const { loaded, mounted } = useShop()
 
   useEffect(() => {
-    // attributes
-    const locationHash = window.location.hash
+    // wait until preload animation finishes
+    if (!loaded) {
+      return
+    }
+
     const allLinks = Array.from(document.querySelectorAll('a'))
     const allSeparators = [...document.querySelectorAll('path.path-anim')]
+    const locationHash = window.location.hash
 
+    // handle all external links
+    if (allLinks.length > 0) {
+      allLinks.forEach(link => {
+        if (link.host !== window.location.host) {
+          link.setAttribute('rel', 'noopener noreferrer')
+          link.setAttribute('target', '_blank')
+        }
+      })
+    }
+
+    // handle line seperators
     allSeparators.forEach(el => {
       const svgEl = el.closest('svg')
       const pathTo = el.dataset.pathTo
@@ -51,19 +69,9 @@ const Layout = ({ children }) => {
           el.scrollIntoView()
           el.focus()
         }
-      }, 0)
+      }, 10)
     }
-
-    // set attributes ot external links
-    if (allLinks.length > 0) {
-      allLinks.forEach(link => {
-        if (link.host !== window.location.host) {
-          link.setAttribute('rel', 'noopener noreferrer')
-          link.setAttribute('target', '_blank')
-        }
-      })
-    }
-  }, [])
+  }, [loaded])
 
   return (
     <ThemeProvider theme={theme}>
@@ -71,7 +79,7 @@ const Layout = ({ children }) => {
       <a className="skip-to-content" href="#content">
         Skip to Content
       </a>
-      {isMounted ? (
+      {mounted ? (
         <StyledContent>
           <Navbar />
           <div id="content">{children}</div>

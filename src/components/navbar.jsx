@@ -170,7 +170,7 @@ const Navbar = () => {
         </div>
       ) : (
         <div className="logo logo--small" tabIndex="-1">
-          <a href="/" aria-label="Home">
+          <a href="/#home" aria-label="Home">
             <IconLogo />
           </a>
         </div>
@@ -198,7 +198,7 @@ const Navbar = () => {
             {isMounted &&
               navLinks.map(({ url, name }, i) => (
                 <motion.li key={i} custom={i} animate={{ y: [-30, 0], opacity: [0, 1] }} transition={{ delay: i * 0.1, duration: 0.3 }} className="fade-enter">
-                  <a className="special-fx" href={url} data-text={name}>
+                  <a href={url} className="special-fx" data-text={name}>
                     <span>{name}</span>
                   </a>
                 </motion.li>

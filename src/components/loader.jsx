@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 import { IconLoader } from '../assets/icons'
+import useShop from '../AppContext'
 
 // styles
 const StyledLoader = styled.div`
@@ -29,10 +30,13 @@ const StyledLoader = styled.div`
     }
   }
 `
+
 // markup
 const Loader = () => {
+  const { loaded } = useShop()
+
   return (
-    <StyledLoader isLoaded={true}>
+    <StyledLoader isLoaded={loaded}>
       <Helmet bodyAttributes={{ class: `hidden` }} />
       <div className="brand-icon">
         <IconLoader />

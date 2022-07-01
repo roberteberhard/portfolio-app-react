@@ -11,7 +11,7 @@ const StyledMainContainer = styled.main`
 const Imprint = () => {
   return (
     <Layout>
-      <StyledMainContainer>
+      <StyledMainContainer id="home">
         <h1>Imprint</h1>
       </StyledMainContainer>
     </Layout>

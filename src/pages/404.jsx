@@ -11,7 +11,7 @@ const StyledMainContainer = styled.main`
 const PageNotFound = () => {
   return (
     <Layout>
-      <StyledMainContainer>
+      <StyledMainContainer id="home">
         <h1>PageNotFound</h1>
       </StyledMainContainer>
     </Layout>
