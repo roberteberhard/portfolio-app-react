@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { IconPlus } from '../assets/icons'
@@ -110,8 +110,6 @@ const StyledHeroRight = styled.div`
 
 // markup
 const Hero = () => {
-  const isHome = true
-  const [isMounted, setIsMounted] = useState(!isHome)
   const one = <h1>Hi, my name is</h1>
   const two = <h2 className="large-heading">Robert Eberhard.</h2>
   const three = <h3 className="large-heading">I build apps for the web.</h3>
@@ -125,44 +123,31 @@ const Hero = () => {
   )
   const items = [one, two, three, four, five]
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsMounted(true)
-    }, 100)
-
-    return () => {
-      clearTimeout(timeout)
-    }
-  }, [])
-
   return (
     <StyledHeroSection id="hero">
       <StyledHeroContent>
         <StyledHeroLeft>
-          {isMounted &&
-            items.map((item, i) => (
-              <motion.div key={i} custom={i} animate={{ y: [30, 0], opacity: [0, 1] }} transition={{ delay: i * 0.1 + 0.8, duration: 0.3 }} className="fade-up">
-                {item}
-              </motion.div>
-            ))}
+          {items.map((item, i) => (
+            <motion.div key={i} custom={i} animate={{ y: [30, 0], opacity: [0, 1] }} transition={{ delay: i * 0.1 + 0.8, duration: 0.3 }} className="fade-up">
+              {item}
+            </motion.div>
+          ))}
         </StyledHeroLeft>
         <StyledHeroRight>
-          {isMounted && (
-            <div className="hero-card">
-              <motion.div animate={{ scale: [1.1, 1], opacity: [0, 1] }} transition={{ delay: 1.6, duration: 0.3 }} className="fade-enter">
-                <SneakerCard />
-              </motion.div>
-              <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 1.8, duration: 0.3 }} className="card-plus-1 fade-enter">
-                <IconPlus />
-              </motion.div>
-              <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 1.9, duration: 0.3 }} className="card-plus-2 fade-enter">
-                <IconPlus />
-              </motion.div>
-              <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 2, duration: 0.3 }} className="card-plus-3 fade-enter">
-                <IconPlus />
-              </motion.div>
-            </div>
-          )}
+          <div className="hero-card">
+            <motion.div animate={{ scale: [1.1, 1], opacity: [0, 1] }} transition={{ delay: 1.6, duration: 0.3 }} className="fade-enter">
+              <SneakerCard />
+            </motion.div>
+            <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 1.8, duration: 0.3 }} className="card-plus-1 fade-enter">
+              <IconPlus />
+            </motion.div>
+            <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 1.9, duration: 0.3 }} className="card-plus-2 fade-enter">
+              <IconPlus />
+            </motion.div>
+            <motion.div animate={{ scale: [0.25, 1], opacity: [0, 1] }} transition={{ delay: 2, duration: 0.3 }} className="card-plus-3 fade-enter">
+              <IconPlus />
+            </motion.div>
+          </div>
         </StyledHeroRight>
       </StyledHeroContent>
     </StyledHeroSection>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import { Navbar } from '../components'
+import { Loader, Navbar } from '../components'
 import { Footer } from '../container'
 import { GlobalStyle, theme } from '../styles'
 
@@ -14,8 +14,9 @@ const StyledContent = styled.div`
 `
 // markup
 const Layout = ({ children }) => {
-  // register plugin
   gsap.registerPlugin(ScrollTrigger)
+
+  const isMounted = true
 
   useEffect(() => {
     // attributes
@@ -70,11 +71,15 @@ const Layout = ({ children }) => {
       <a className="skip-to-content" href="#content">
         Skip to Content
       </a>
-      <StyledContent>
-        <Navbar />
-        <div id="content">{children}</div>
-        <Footer />
-      </StyledContent>
+      {isMounted ? (
+        <StyledContent>
+          <Navbar />
+          <div id="content">{children}</div>
+          <Footer />
+        </StyledContent>
+      ) : (
+        <Loader />
+      )}
     </ThemeProvider>
   )
 }
