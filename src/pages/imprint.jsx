@@ -1,5 +1,6 @@
 import React from 'react'
 import { Layout } from '../layout'
+import { Impressum } from '../container'
 import styled from 'styled-components'
 
 // styles
@@ -12,7 +13,7 @@ const Imprint = () => {
   return (
     <Layout>
       <StyledMainContainer id="home">
-        <h1>Imprint</h1>
+        <Impressum />
       </StyledMainContainer>
     </Layout>
   )
