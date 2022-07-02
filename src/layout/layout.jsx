@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -20,6 +20,7 @@ const StyledContent = styled.div`
 // markup
 const Layout = ({ children }) => {
   const { loaded, appIsMounted } = useShop()
+  const refTop = useRef(null)
 
   useEffect(() => {
     // wait until preload animation finishes
@@ -31,7 +32,9 @@ const Layout = ({ children }) => {
     const allSeparators = [...document.querySelectorAll('path.path-anim')]
     const locationHash = window.location.hash
 
-    const timeout = setTimeout(() => {
+    refTop.current.scrollIntoView()
+
+    const mountedTimeout = setTimeout(() => {
       appIsMounted(true)
     }, 800)
 
@@ -73,11 +76,11 @@ const Layout = ({ children }) => {
           el.scrollIntoView()
           el.focus()
         }
-      }, 10)
+      }, 100)
     }
 
     return () => {
-      clearTimeout(timeout)
+      clearTimeout(mountedTimeout)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loaded])
@@ -89,7 +92,7 @@ const Layout = ({ children }) => {
         Skip to Content
       </a>
       {loaded ? (
-        <StyledContent>
+        <StyledContent ref={refTop}>
           <Navbar />
           <div id="content">{children}</div>
           <Footer />

@@ -9,8 +9,10 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
+
   *::before,
   *::after {
     box-sizing: border-box;
@@ -218,10 +220,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    min-height: 100vh;
     display: grid;
     grid-template-rows: 1fr auto;
     grid-template-columns: 100%;
+    grid-gap: 0px;
+    width: 100vw;
+    min-height: 100vh;
   }
 
   .skip-to-content {
@@ -360,16 +364,12 @@ const GlobalStyle = createGlobalStyle`
 
   .separator {
     display: block;
+    position: relative;
     pointer-events: none;
     width: 100%;
     height: 100px;
   }
-  .separator--up {
-    top: -1px;
-  }
-  .separator--down {
-    bottom: -1px;
-  }
+
   ${transition};
 `
 

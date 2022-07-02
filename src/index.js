@@ -4,9 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AppProvider } from './context/AppContext'
 
 // routes & components
-import Home from './pages/home'
-import Privacy from './pages/privacy'
-import Imprint from './pages/imprint'
+import { Home, Privacy, Imprint, PageNotFound } from './pages'
 
 const Index = () => {
   return (
@@ -16,6 +14,7 @@ const Index = () => {
           <Route path="/" element={<Home />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/imprint" element={<Imprint />} />
+          <Route path="*" component={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </AppProvider>

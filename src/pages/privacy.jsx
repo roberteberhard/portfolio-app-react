@@ -9,7 +9,7 @@ const StyledMainContainer = styled.main`
 `
 
 // markup
-const PrivacyPage = () => {
+const Privacy = () => {
   return (
     <Layout>
       <StyledMainContainer id="home">
@@ -19,4 +19,4 @@ const PrivacyPage = () => {
   )
 }
 
-export default PrivacyPage
+export default Privacy

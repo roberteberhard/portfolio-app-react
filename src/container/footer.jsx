@@ -9,8 +9,8 @@ const StyledFooter = styled.footer`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   height: auto;
-  min-height: 70px;
-  padding: 15px;
+  min-height: 140px;
+  padding: 15px 0 30px;
   text-align: center;
   background-colol: var(--body);
 `
