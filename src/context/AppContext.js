@@ -6,9 +6,8 @@ const AppContext = createContext(initialState)
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState)
 
+  /* Show content after the page preload animation */
   const appIsLoaded = isLoaded => {
-    updateMounted(isLoaded)
-
     dispatch({
       type: 'APP_IS_LOADED',
       payload: {
@@ -17,9 +16,10 @@ export const AppProvider = ({ children }) => {
     })
   }
 
-  const updateMounted = isMounted => {
+  /* Stop animate navlinks by page routing  */
+  const appIsMounted = isMounted => {
     dispatch({
-      type: 'UPDATE_MOUNTED',
+      type: 'APP_IS_MOUNTED',
       payload: {
         mounted: isMounted
       }
@@ -29,7 +29,8 @@ export const AppProvider = ({ children }) => {
   const value = {
     loaded: state.loaded,
     mounted: state.mounted,
-    appIsLoaded
+    appIsLoaded,
+    appIsMounted
   }
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>
 }

@@ -14,8 +14,8 @@ const shopReducer = (state, action) => {
         ...state,
         loaded: payload.loaded
       }
-    case 'UPDATE_MOUNTED':
-      console.log('UPDATE_MOUNTED', payload)
+    case 'APP_IS_MOUNTED':
+      console.log('APP_IS_MOUNTED', payload)
 
       return {
         ...state,

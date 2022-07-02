@@ -5,7 +5,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import { Loader, Navbar } from '../components'
 import { Footer } from '../container'
 import { GlobalStyle, theme } from '../styles'
-import useShop from '../AppContext'
+import useShop from '../context/AppContext'
 
 // register gsap
 gsap.registerPlugin(ScrollTrigger)
@@ -19,7 +19,7 @@ const StyledContent = styled.div`
 
 // markup
 const Layout = ({ children }) => {
-  const { loaded, mounted } = useShop()
+  const { loaded, appIsMounted } = useShop()
 
   useEffect(() => {
     // wait until preload animation finishes
@@ -30,6 +30,10 @@ const Layout = ({ children }) => {
     const allLinks = Array.from(document.querySelectorAll('a'))
     const allSeparators = [...document.querySelectorAll('path.path-anim')]
     const locationHash = window.location.hash
+
+    const timeout = setTimeout(() => {
+      appIsMounted(true)
+    }, 800)
 
     // handle all external links
     if (allLinks.length > 0) {
@@ -71,6 +75,11 @@ const Layout = ({ children }) => {
         }
       }, 10)
     }
+
+    return () => {
+      clearTimeout(timeout)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loaded])
 
   return (
@@ -79,7 +88,7 @@ const Layout = ({ children }) => {
       <a className="skip-to-content" href="#content">
         Skip to Content
       </a>
-      {mounted ? (
+      {loaded ? (
         <StyledContent>
           <Navbar />
           <div id="content">{children}</div>

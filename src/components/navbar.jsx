@@ -6,6 +6,7 @@ import { Menu } from '../components'
 import { useScrollDirection } from '../hooks/'
 import { IconLogo } from '../assets/icons'
 import { navLinks } from '../config'
+import useShop from '../context/AppContext'
 
 // styled
 const StyledHeader = styled.header`
@@ -92,7 +93,6 @@ const StyledLinks = styled.div`
   @media (max-width: 768px) {
     display: none;
   }
-
   ol {
     ${({ theme }) => theme.mixins.flexBetween};
     padding: 0;
@@ -138,8 +138,7 @@ const StyledMenu = styled.div`
 
 // markup
 const Navbar = () => {
-  const isHome = true
-  const [isMounted, setIsMounted] = useState(!isHome)
+  const { mounted } = useShop()
   const scrollDirection = useScrollDirection('down')
   const [scrolledToTop, setScrolledToTop] = useState(true)
 
@@ -148,14 +147,8 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsMounted(true)
-    }, 100)
-
     window.addEventListener('scroll', handleScroll)
-
     return () => {
-      clearTimeout(timeout)
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
@@ -187,7 +180,9 @@ const Navbar = () => {
   return (
     <StyledHeader scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
       <StyledNavbar>
-        {isMounted && (
+        {mounted ? (
+          <div className="faded">{LogoLink}</div>
+        ) : (
           <motion.div animate={{ opacity: [0, 1] }} transition={{ duration: 0.3 }} className="fade-enter">
             {LogoLink}
           </motion.div>
@@ -195,16 +190,25 @@ const Navbar = () => {
 
         <StyledLinks>
           <ol>
-            {isMounted &&
-              navLinks.map(({ url, name }, i) => (
-                <motion.li key={i} custom={i} animate={{ y: [-30, 0], opacity: [0, 1] }} transition={{ delay: i * 0.1, duration: 0.3 }} className="fade-enter">
-                  <a href={url} className="special-fx" data-text={name}>
-                    <span>{name}</span>
-                  </a>
-                </motion.li>
-              ))}
+            {mounted
+              ? navLinks.map(({ url, name }, i) => (
+                  <li key={i} className="faded">
+                    <a href={url} className="special-fx" data-text={name}>
+                      <span>{name}</span>
+                    </a>
+                  </li>
+                ))
+              : navLinks.map(({ url, name }, i) => (
+                  <motion.li key={i} custom={i} animate={{ y: [-30, 0], opacity: [0, 1] }} transition={{ delay: i * 0.1, duration: 0.3 }} className="fade-enter">
+                    <a href={url} className="special-fx" data-text={name}>
+                      <span>{name}</span>
+                    </a>
+                  </motion.li>
+                ))}
           </ol>
-          {isMounted && (
+          {mounted ? (
+            <div className="faded">{ResumeLink}</div>
+          ) : (
             <motion.div animate={{ y: [-30, 0], opacity: [0, 1] }} transition={{ delay: navLinks.length * 0.1, duration: 0.3 }} className="fade-enter">
               {ResumeLink}
             </motion.div>
@@ -212,7 +216,11 @@ const Navbar = () => {
         </StyledLinks>
 
         <StyledMenu>
-          {isMounted && (
+          {mounted ? (
+            <div className="faded">
+              <Menu />
+            </div>
+          ) : (
             <motion.div animate={{ opacity: [0, 1] }} transition={{ delay: 0.3, duration: 0.3 }} className="fade-enter">
               <Menu />
             </motion.div>

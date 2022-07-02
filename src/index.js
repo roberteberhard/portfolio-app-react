@@ -1,7 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { AppProvider } from './AppContext'
+import { AppProvider } from './context/AppContext'
 
 // routes & components
 import Home from './pages/home'

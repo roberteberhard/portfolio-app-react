@@ -1,7 +1,9 @@
 import { css } from 'styled-components'
 
 const transition = css`
-  /* Fade */
+  .faded {
+    opacity: 1;
+  }
   .fade-enter {
     opacity: 0;
   }
