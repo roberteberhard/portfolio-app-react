@@ -98,15 +98,15 @@ const StyledInnerSection = styled.div`
 // markup
 const Impressum = () => {
   const { mounted } = useShop()
-  const [showWithoutDelay, setShowWithoutDelay] = useState(false)
+  const [hasNoDelay, setHasNoDelay] = useState(mounted)
 
   useEffect(() => {
-    setShowWithoutDelay(mounted ? true : false)
+    setHasNoDelay(mounted)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const data = (
-    <div>
+    <>
       <p className="heading">Imprint</p>
       <h1 className="title">Impressum</h1>
       <h3>ROBERTEBERHARD</h3>
@@ -136,7 +136,7 @@ const Impressum = () => {
       <h4>Urheberrecht</h4>
       <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem Schweizer Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
       <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen.</p>
-    </div>
+    </>
   )
 
   return (
@@ -144,12 +144,12 @@ const Impressum = () => {
       <IconSeparatorDown className="down" />
       <StyledImprintContent>
         <StyledInnerSection>
-          {showWithoutDelay ? (
-            <motion.div animate={{ y: [30, 0], opacity: [0, 1] }} transition={{ delay: 0.8, duration: 0.3 }} className="fade-enter">
+          {hasNoDelay ? (
+            <motion.div animate={{ opacity: [0, 1] }} transition={{ duration: 0 }} className="fade-enter">
               {data}
             </motion.div>
           ) : (
-            <motion.div animate={{ opacity: [0, 1] }} transition={{ duration: 0.3 }} className="fade-enter">
+            <motion.div animate={{ y: [30, 0], opacity: [0, 1] }} transition={{ delay: 0.6, duration: 0.5 }} className="fade-enter">
               {data}
             </motion.div>
           )}
