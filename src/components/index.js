@@ -1,4 +1,5 @@
 export { default as Loader } from './loader'
 export { default as Menu } from './menu'
 export { default as Navbar } from './navbar'
-export { default as SneakerCard } from './sneaker-card'
+export { default as SneakerCard } from './SneakerCard'
+export { default as TextAnimations } from './animations/TextAnimations'

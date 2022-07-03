@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { IconPlus } from '../assets/icons'
-import { SneakerCard } from '../components'
+import { SneakerCard, TextAnimations } from '../components'
 
 // styled
 const StyledHeroSection = styled.section`
@@ -110,9 +110,14 @@ const StyledHeroRight = styled.div`
 
 // markup
 const Hero = () => {
+  // content
   const one = <h1>Hi, my name is</h1>
   const two = <h2 className="large-heading">Robert Eberhard.</h2>
-  const three = <h3 className="large-heading">I build apps for the web.</h3>
+  const three = (
+    <h3 className="large-heading">
+      I build <TextAnimations /> for the web.
+    </h3>
+  )
   const four = <p>I am a freelance web developer with more than 2 decades of experience in developing solid and scalable front-end products using modern web technologies for clients across several countries.</p>
   const five = (
     <div className="button-box">

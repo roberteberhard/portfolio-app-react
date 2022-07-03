@@ -8,15 +8,13 @@ const shopReducer = (state, action) => {
 
   switch (type) {
     case 'APP_IS_LOADED':
-      console.log('APP_IS_LOADED', payload)
-
+      //console.log('APP_IS_LOADED', payload)
       return {
         ...state,
         loaded: payload.loaded
       }
     case 'APP_IS_MOUNTED':
-      console.log('APP_IS_MOUNTED', payload)
-
+      //console.log('APP_IS_MOUNTED', payload)
       return {
         ...state,
         mounted: payload.mounted

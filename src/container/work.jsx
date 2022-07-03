@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 // styled
 const StyledWorkSection = styled.section`
@@ -27,7 +28,18 @@ const Work = () => {
     <StyledWorkSection id="work">
       <StyledWorkContent>
         <StyledInnerSection>
-          <h2 className="numbered-heading">Work</h2>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              visible: { opacity: 1, scale: 1 },
+              hidden: { opacity: 0, scale: 0 }
+            }}
+          >
+            <h2 className="numbered-heading">Work</h2>
+          </motion.div>
         </StyledInnerSection>
       </StyledWorkContent>
     </StyledWorkSection>

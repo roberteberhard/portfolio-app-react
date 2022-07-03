@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import { IconSeparatorUp } from '../assets/icons'
 
 // styles
@@ -27,12 +28,31 @@ const StyledInnerSection = styled.div`
 
 // markup
 const About = () => {
+  const FadeInWhenVisible = ({ children }) => {
+    return (
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.3 }}
+        variants={{
+          visible: { opacity: 1, scale: 1 },
+          hidden: { opacity: 0, scale: 0 }
+        }}
+      >
+        {children}
+      </motion.div>
+    )
+  }
+
   return (
     <StyledAboutSection id="about">
       <IconSeparatorUp />
       <StyledAboutContent>
         <StyledInnerSection>
-          <h2 className="numbered-heading">About Me</h2>
+          <FadeInWhenVisible>
+            <h2 className="numbered-heading">About me</h2>
+          </FadeInWhenVisible>
         </StyledInnerSection>
       </StyledAboutContent>
     </StyledAboutSection>

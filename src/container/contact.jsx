@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import { IconSeparatorDown } from '../assets/icons'
 
 // styled
@@ -32,7 +33,18 @@ const Contact = () => {
       <IconSeparatorDown />
       <StyledContacContent>
         <StyledInnerSection>
-          <h2 className="numbered-heading">Contact</h2>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              visible: { opacity: 1, scale: 1 },
+              hidden: { opacity: 0, scale: 0 }
+            }}
+          >
+            <h2 className="numbered-heading">Contact</h2>
+          </motion.div>
         </StyledInnerSection>
       </StyledContacContent>
     </StyledContactSection>

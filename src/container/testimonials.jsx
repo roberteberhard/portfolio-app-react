@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 // styled
 const StyledTestimonialsSection = styled.section`
@@ -27,7 +28,18 @@ const Testimonials = () => {
     <StyledTestimonialsSection id="testimonials">
       <StyledTestimonialsContent>
         <StyledInnerSection>
-          <h2 className="numbered-heading">Testimonials</h2>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              visible: { opacity: 1, scale: 1 },
+              hidden: { opacity: 0, scale: 0 }
+            }}
+          >
+            <h2 className="numbered-heading">Testimonials</h2>
+          </motion.div>
         </StyledInnerSection>
       </StyledTestimonialsContent>
     </StyledTestimonialsSection>
