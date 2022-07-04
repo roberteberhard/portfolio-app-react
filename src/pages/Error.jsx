@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from '../layout'
-import { Error } from '../container'
+import { Errors } from '../container'
 import styled from 'styled-components'
 
 // styles
@@ -9,14 +9,14 @@ const StyledMainContainer = styled.main`
 `
 
 // markup
-const Missing = () => {
+const Error = () => {
   return (
     <Layout>
-      <StyledMainContainer id="home">
-        <Error />
+      <StyledMainContainer>
+        <Errors />
       </StyledMainContainer>
     </Layout>
   )
 }
 
-export default Missing
+export default Error

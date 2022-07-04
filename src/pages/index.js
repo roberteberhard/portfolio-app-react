@@ -1,4 +1,4 @@
-export { default as Home } from './home'
-export { default as Imprint } from './imprint'
-export { default as Privacy } from './privacy'
-export { default as Missing } from './missing'
+export { default as Home } from './Home'
+export { default as Imprint } from './Imprint'
+export { default as Privacy } from './Privacy'
+export { default as Error } from './Error'

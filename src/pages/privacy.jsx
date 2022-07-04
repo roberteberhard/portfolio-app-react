@@ -12,7 +12,7 @@ const StyledMainContainer = styled.main`
 const Privacy = () => {
   return (
     <Layout>
-      <StyledMainContainer id="home">
+      <StyledMainContainer>
         <PrivacyPolicy />
       </StyledMainContainer>
     </Layout>

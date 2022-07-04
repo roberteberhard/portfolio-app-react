@@ -6,7 +6,7 @@ import { IconSeparatorDown } from '../assets/icons'
 import useShop from '../context/AppContext'
 
 // styles
-const StyledErrorSection = styled.section`
+const StyledImprintSection = styled.section`
   display: grid;
   padding-top: 100px;
   background-color: var(--body);
@@ -21,7 +21,7 @@ const StyledErrorSection = styled.section`
   }
 `
 
-const StyledErrorContent = styled.div`
+const StyledImprintContent = styled.div`
   padding: 0 var(--pad-lg) var(--pad-xxl) var(--pad-lg);
   background-color: var(--sandy);
 
@@ -96,7 +96,7 @@ const StyledInnerSection = styled.div`
 `
 
 // markup
-const Error = () => {
+const Errors = () => {
   const { mounted } = useShop()
   const [hasNoDelay, setHasNoDelay] = useState(mounted)
 
@@ -107,15 +107,15 @@ const Error = () => {
 
   const data = (
     <>
-      <p className="heading">Error</p>
+      <p className="heading">404</p>
       <h1 className="title">Page Not Found</h1>
     </>
   )
 
   return (
-    <StyledErrorSection>
+    <StyledImprintSection>
       <IconSeparatorDown className="down" />
-      <StyledErrorContent>
+      <StyledImprintContent>
         <StyledInnerSection>
           {hasNoDelay ? (
             <motion.div animate={{ opacity: [0, 1] }} transition={{ duration: 0 }} className="fade-enter">
@@ -127,10 +127,10 @@ const Error = () => {
             </motion.div>
           )}
         </StyledInnerSection>
-      </StyledErrorContent>
+      </StyledImprintContent>
       <IconSeparatorUp />
-    </StyledErrorSection>
+    </StyledImprintSection>
   )
 }
 
-export default Error
+export default Errors

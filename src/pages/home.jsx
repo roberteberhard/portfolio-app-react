@@ -12,7 +12,7 @@ const StyledMainContainer = styled.main`
 const Home = () => {
   return (
     <Layout>
-      <StyledMainContainer id="home">
+      <StyledMainContainer>
         <Hero />
         <About />
         <Work />

@@ -3,21 +3,22 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AppProvider } from './context/AppContext'
 
-// routes & components
-import { Home, Privacy, Imprint, Missing } from './pages'
+import { Home, Privacy, Imprint, Error } from './pages'
 
 const Index = () => {
   return (
-    <AppProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/imprint" element={<Imprint />} />
-          <Route path="*" component={<Missing />} />
-        </Routes>
-      </BrowserRouter>
-    </AppProvider>
+    <React.StrictMode>
+      <AppProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/imprint" element={<Imprint />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </BrowserRouter>
+      </AppProvider>
+    </React.StrictMode>
   )
 }
 

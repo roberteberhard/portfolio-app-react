@@ -12,7 +12,7 @@ const StyledMainContainer = styled.main`
 const Imprint = () => {
   return (
     <Layout>
-      <StyledMainContainer id="home">
+      <StyledMainContainer>
         <Impressum />
       </StyledMainContainer>
     </Layout>
