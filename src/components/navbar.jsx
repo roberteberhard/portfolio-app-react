@@ -122,7 +122,7 @@ const StyledLinks = styled.div`
       }
     }
   }
-  .resume-button {
+  .hire-button {
     ${({ theme }) => theme.mixins.smallButton};
     margin-left: 15px;
     font-size: var(--fz-xs);
@@ -171,9 +171,9 @@ const Navbar = () => {
     </>
   )
 
-  const ResumeLink = (
-    <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-      Resume
+  const HireMeLink = (
+    <a className="hire-button" href="/#contact">
+      Hire Me!
     </a>
   )
 
@@ -207,10 +207,10 @@ const Navbar = () => {
                 ))}
           </ol>
           {mounted ? (
-            <div className="faded">{ResumeLink}</div>
+            <div className="faded">{HireMeLink}</div>
           ) : (
             <motion.div animate={{ y: [-30, 0], opacity: [0, 1] }} transition={{ delay: navLinks.length * 0.1, duration: 0.3 }} className="fade-enter">
-              {ResumeLink}
+              {HireMeLink}
             </motion.div>
           )}
         </StyledLinks>

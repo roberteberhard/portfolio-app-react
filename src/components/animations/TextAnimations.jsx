@@ -43,7 +43,7 @@ const Wrapper = styled.span`
 // markup
 const TextAnimation = () => {
   const appsArray = 'Apps'.split('')
-  const pwaArray = "PWA's".split('')
+  const pwaArray = 'PWAs'.split('')
   const shopsArray = 'Shops'.split('')
   const sitesArray = 'Sites'.split('')
   const themesArray = 'Themes'.split('')
