@@ -12,7 +12,7 @@ const StyledContactSection = styled.section`
   }
 `
 
-const StyledContacContent = styled.div`
+const StyledContactContent = styled.div`
   padding: 0 var(--pad-lg) var(--pad-xxl) var(--pad-lg);
   @media (max-width: 1080px) {
     padding: 0 var(--pad-md) var(--pad-xl) var(--pad-md);
@@ -22,7 +22,7 @@ const StyledContacContent = styled.div`
   }
 `
 
-const StyledInnerSection = styled.div`
+const StyledContactInner = styled.div`
   margin: 0;
 `
 
@@ -31,8 +31,8 @@ const Contact = () => {
   return (
     <StyledContactSection id="contact">
       <IconSeparatorDown />
-      <StyledContacContent>
-        <StyledInnerSection>
+      <StyledContactContent>
+        <StyledContactInner>
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -45,8 +45,8 @@ const Contact = () => {
           >
             <h2 className="numbered-heading">Contact</h2>
           </motion.div>
-        </StyledInnerSection>
-      </StyledContacContent>
+        </StyledContactInner>
+      </StyledContactContent>
     </StyledContactSection>
   )
 }
