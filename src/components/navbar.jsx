@@ -173,7 +173,7 @@ const Navbar = () => {
 
   const HireMeLink = (
     <a className="hire-button" href="/#contact">
-      Hire Me!
+      Book Me!
     </a>
   )
 

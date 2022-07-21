@@ -142,7 +142,7 @@ const PrivacyPolicy = () => {
       <h3>ANALYSIS TOOLS AND THIRD-PARTY TOOLS</h3>
       <p>When visiting this website, your surfing behavior can be statistically evaluated. This is done primarily with so-called analysis programs.</p>
       <p>Detailed information about these analysis programs can be found in the following privacy policy.</p>
-      <h2>2. HOSTING UND CONTENT DELIVERY NETWORKS (CDN)</h2>
+      <h2>2. HOSTING AND CONTENT DELIVERY NETWORKS (CDN)</h2>
       <h3>EXTERNAL HOSTING</h3>
       <p>SG Hosting Inc. is a company registered and existing under the laws of Delaware, USA, with registered address: 901 N. Pitt St, Suite 325, Alexandria 22314 VA, USA. The privacy policy can be found here: https://www.siteground.com/privacy.htm. SG Hosting Inc. complies with the EU-U.S. Privacy Shield Framework and Swiss-U.S. Privacy Shield Framework as set forth by the U.S. Department of Commerce regarding the collection, use, and retention of personal information transferred from the European Union and Switzerland to the United States.</p>
       <h2>3. GENERAL NOTES AND MANDATORY INFORMATION</h2>
@@ -235,7 +235,7 @@ const PrivacyPolicy = () => {
         .
       </p>
       <h4>Job processing</h4>
-      <p>I have concluded an job processing contract with Google and fully implement the strict requirements of the German data protection authorities when using Google Analytics.</p>
+      <p>I have concluded an job processing contract with Google and fully implement the strict requirements of the Swiss data protection authorities when using Google Analytics.</p>
       <h4>Data retention</h4>
       <p>
         Data stored by Google at user and event level that is linked to cookies, user identifiers (e.g. User ID) or advertising IDs (e.g. DoubleClick cookies, Android advertising ID) is anonymized or deleted after 14 months. For details, please see the following link:{' '}
